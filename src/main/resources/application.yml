@@ -5,7 +5,7 @@ spring:
     name: booking-api
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres:5433/bookingdb
+    url: jdbc:postgresql://postgres:5432/bookingdb
     username: postgres
     password: postgres
     hikari:
