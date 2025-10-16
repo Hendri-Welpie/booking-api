@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "a79c6b02-2666-4d54-b6a4-be6c9016736c",
+		"name": "booking-api Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10186751"
+	},
+	"item": [
+		{
+			"name": "/api/v1/reservations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Trace-Id",
+						"value": "{{$randomUUID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9080/api/v1/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/reservations/available-rooms",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Trace-Id",
+						"value": "{{$randomUUID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9080/api/v1/reservations/available-rooms?checkin=2025-10-20&checkout=2025-10-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"available-rooms"
+					],
+					"query": [
+						{
+							"key": "checkin",
+							"value": "2025-10-20"
+						},
+						{
+							"key": "checkout",
+							"value": "2025-10-25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/reservations/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"a8aa4686-66ca-418b-9e15-bb3917718815\",\r\n  \"userId\": \"6e1dad99-c16c-40e2-ad7a-d07187892c45\",\r\n  \"roomId\": \"22222222-2222-2222-2222-222222222222\",\r\n  \"firstname\": \"John\",\r\n  \"surname\": \"Doe\",\r\n  \"roomNum\": 102,\r\n  \"checkinDate\": \"2025-10-15\",\r\n  \"checkoutDate\": \"2025-10-16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http:/localhost:9080/api/v1/reservations/a8aa4686-66ca-418b-9e15-bb3917718815",
+					"host": [
+						"http"
+					],
+					"port": "",
+					"path": [
+						"localhost:9080",
+						"api",
+						"v1",
+						"reservations",
+						"a8aa4686-66ca-418b-9e15-bb3917718815"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\r\n  'https://booking_api/api/v1/reservations/3fa85f64-5717-4562-b3fc-2c963f66afa6' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"roomId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"firstname\": \"string\",\r\n  \"surname\": \"string\",\r\n  \"roomNum\": 0,\r\n  \"checkinDate\": \"2025-10-15\",\r\n  \"checkoutDate\": \"2025-10-15\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/reservations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Trace-Id",
+						"value": "{{$randomUUID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"6e1dad99-c16c-40e2-ad7a-d07187892c45\",\r\n  \"roomId\": \"22222222-2222-2222-2222-222222222222\",\r\n  \"firstname\": \"John\",\r\n  \"surname\": \"Doe\",\r\n  \"roomNum\": 102,\r\n  \"checkinDate\": \"2025-10-15\",\r\n  \"checkoutDate\": \"2025-10-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/api/v1/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"reservations"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://booking_api/api/v1/reservations' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"roomId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"firstname\": \"string\",\r\n  \"surname\": \"string\",\r\n  \"roomNum\": 0,\r\n  \"checkinDate\": \"2025-10-15\",\r\n  \"checkoutDate\": \"2025-10-15\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/reservations/{id}/cancel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9080/api/v1/reservations/11111111-aaaa-1111-aaaa-111111111111/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"reservations",
+						"11111111-aaaa-1111-aaaa-111111111111",
+						"cancel"
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://booking_api/api/v1/reservations/3fa85f64-5717-4562-b3fc-2c963f66afa6/cancel' \\\r\n  -H 'accept: */*' \\\r\n  -d ''"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/reservations/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTEzMiwic3ViIjoiYWRtaW4ifQ.F0Nr09OnzeknmfQEInJoyVO1lCK9PC59s1bhxtN4sNY3bBZXnqaR5reKn3P2UTPI22XLSkp-49wgxaeePOay-rHTlt8Inxf9zTqIZ4WpXlUZLcIxWTwv7PIVAMJYup7ydxr_EJTm7K-OzC2xEkIA04qKuYDd5mFPfTlCr8aAW_tV1bu4M2iOBb8JCJaikRq8LuBjDWF3p7FVUcXa_ci0G1Vs2oXslNUkUxue7PIP9Y_9TsUm1JUKiXlVdb76FwdMk8lhpU6oQ1UmAS_qE5gYRvKruArjn5nAJ9CFQSMZ8vZNCB52RaeBJKJWJDdcCxS8a-jhrQtCzR-30n181K_5-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/api/v1/reservations11111111-aaaa-1111-aaaa-111111111111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"reservations11111111-aaaa-1111-aaaa-111111111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJib29raW5nLWFwaSIsImV4cCI6MTc2MDYxOTM2NSwic3ViIjoiYWRtaW4ifQ.exYkTK4rRErE0kG9CiObet3b-0SMStK5XyE2Djx4lrRZyDd7UoUepUwzn6b6NmRgZAsAbbANJI2FI6zrJwHQtsZoZiMBKrPHXAJfGhKsQ3Pj2TRn5Kq_gU0p65BdxxsJH-PRUl54yiJWgeqjILu-yeH1immuwQsdUonef7OKmL3VVvaBQyOEH_TN6pHlxNeYwJKSuTtvOHEZcxRVYTjDp3cZNnvGxkhOKO1glEjnvB3bd-JLTVZz0vPHmj64fOSt4ca7xdCW05Y8sPCB3dtMUyl53fJvBUT0p7piE3Ug9GaFhLLizYi_ed-VLG7fEtECxoE1Ih8x_wtLwZXsXy0uOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
